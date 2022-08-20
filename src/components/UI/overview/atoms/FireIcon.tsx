@@ -1,7 +1,7 @@
-import React from 'react';
-import { Theme, makeStyles } from '@material-ui/core/styles';
-import { Avatar } from '@material-ui/core';
-import { WhatshotRounded } from '@material-ui/icons';
+import React from "react";
+import { Theme, makeStyles } from "@material-ui/core/styles";
+import { Avatar } from "@material-ui/core";
+import { WhatshotRounded } from "@material-ui/icons";
 const useStyles = makeStyles((theme: Theme) => ({
   avatarColor: {
     marginRight: 6,
@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   fire: {
     fill: "url(#linearFire)",
-  }
+  },
 }));
 
 const FireIcon: React.FC = () => {
@@ -25,7 +25,7 @@ const FireIcon: React.FC = () => {
       </svg>
       <WhatshotRounded classes={{ root: classes.fire }} />
     </Avatar>
-  )
-}
+  );
+};
 
-export default FireIcon
+export default FireIcon;

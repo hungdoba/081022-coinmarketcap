@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://coinmarketcap.jp/trends</loc>
+    <lastmod>2022-08-08</lastmod>
+  </url>
+  <url>
+    <loc>https://coinmarketcap.jp/coins</loc>
+    <lastmod>2022-08-08</lastmod>
+  </url>
+  <url>
+    <loc>https://coinmarketcap.jp/exchanges</loc>
+    <lastmod>2022-08-08</lastmod>
+  </url>
+  <url>
+    <loc>https://coinmarketcap.jp/updates</loc>
+    <lastmod>2022-08-08</lastmod>
+  </url>
+  <url>
+    <loc>https://coinmarketcap.jp/about</loc>
+    <lastmod>2022-08-08</lastmod>
+  </url>
+  <url>
+    <loc>https://coinmarketcap.jp/privacy</loc>
+    <lastmod>2022-08-08</lastmod>
+  </url>
+  <url>
+    <loc>https://coinmarketcap.jp/contact</loc>
+    <lastmod>2022-08-08</lastmod>
+  </url>
+</urlset>

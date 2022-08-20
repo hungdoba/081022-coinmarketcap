@@ -1,44 +1,47 @@
-import React from 'react';
-import { Theme, makeStyles, useTheme } from '@material-ui/core/styles';
-import { Grid, Hidden } from '@material-ui/core';
-import CoinCorrelationCard from '../../components/UI/trends/organisms/CoinCorrelationCard';
-import FearGreedIndexCard from '../../components/UI/trends/organisms/FearGreedIndexCard';
-import BitcoinHashRateCard from '../../components/UI/trends/organisms/BitcoinHashRateCard';
+import React, { useEffect } from "react";
+import { Theme, makeStyles, useTheme } from "@material-ui/core/styles";
+import { Grid, Hidden } from "@material-ui/core";
+import CoinCorrelationCard from "../../components/UI/trends/organisms/CoinCorrelationCard";
+import FearGreedIndexCard from "../../components/UI/trends/organisms/FearGreedIndexCard";
+import BitcoinHashRateCard from "../../components/UI/trends/organisms/BitcoinHashRateCard";
 
 const useStyles = makeStyles((theme: Theme) => ({
   wrapper: {
-    height: '100%',
-    overflow: 'scroll',
-    '& > .MuiGrid-item': {
-      height: '100%',
-      minHeight: 650
+    height: "100%",
+    overflow: "scroll",
+    "& > .MuiGrid-item": {
+      height: "100%",
+      minHeight: 650,
     },
-    [theme.breakpoints.only('md')]: {
-      '& > .MuiGrid-item': {
-        height: 'fit-content',
-        minHeight: 0
-      }
-    }
-  },
-  innerWrapper: {
-    height: '100%',
-    '& > .MuiGrid-item:not(:last-child)': {
-      marginBottom: theme.spacing(3)
-    },
-    [theme.breakpoints.only('md')]: {
-      '& > .MuiGrid-item': {
-        marginBottom: '0px !important'
+    [theme.breakpoints.only("md")]: {
+      "& > .MuiGrid-item": {
+        height: "fit-content",
+        minHeight: 0,
       },
     },
-    [theme.breakpoints.down('sm')]: {
-      overflow: 'scroll',
-    }
-  }
+  },
+  innerWrapper: {
+    height: "100%",
+    "& > .MuiGrid-item:not(:last-child)": {
+      marginBottom: theme.spacing(3),
+    },
+    [theme.breakpoints.only("md")]: {
+      "& > .MuiGrid-item": {
+        marginBottom: "0px !important",
+      },
+    },
+    [theme.breakpoints.down("sm")]: {
+      overflow: "scroll",
+    },
+  },
 }));
 
 const Trends: React.FC = () => {
   const classes = useStyles();
   const theme = useTheme();
+  useEffect(() => {
+    document.title = "CoinMarketCap | Trends";
+  });
 
   return (
     <Grid
@@ -46,10 +49,9 @@ const Trends: React.FC = () => {
       className={classes.wrapper}
       spacing={3}
       direction="row"
-      justify="center"
+      justifyContent="center"
       alignItems="stretch"
     >
-
       <Hidden mdDown>
         {/* Height = match screen 100% */}
         <Grid item lg={8} xl={9}>
@@ -57,10 +59,18 @@ const Trends: React.FC = () => {
         </Grid>
         <Grid item lg={4} xl={3}>
           <Grid container className={classes.innerWrapper} spacing={0}>
-            <Grid item xs={12} style={{ height: `calc(50% - ${theme.spacing(3) / 2}px)` }}>
+            <Grid
+              item
+              xs={12}
+              style={{ height: `calc(50% - ${theme.spacing(3) / 2}px)` }}
+            >
               <FearGreedIndexCard />
             </Grid>
-            <Grid item xs={12} style={{ height: `calc(50% - ${theme.spacing(3) / 2}px)` }}>
+            <Grid
+              item
+              xs={12}
+              style={{ height: `calc(50% - ${theme.spacing(3) / 2}px)` }}
+            >
               <BitcoinHashRateCard />
             </Grid>
           </Grid>
@@ -100,9 +110,8 @@ const Trends: React.FC = () => {
           </Grid>
         </Grid>
       </Hidden>
-
     </Grid>
-  )
-}
+  );
+};
 
-export default Trends
+export default Trends;

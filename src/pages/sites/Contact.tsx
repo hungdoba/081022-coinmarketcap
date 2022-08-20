@@ -3,8 +3,8 @@ import { Theme, makeStyles, useTheme } from "@material-ui/core/styles";
 import { Grid, Hidden } from "@material-ui/core";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { fetchCompanies, selectCompanies } from "../../features/companiesSlice";
-import StatusUpdateListCard from "../../components/UI/updates/organisms/StatusUpdateListCard";
 import CompaniesCard from "../../components/UI/updates/organisms/CompaniesCard";
+import ContactTitleCard from "../../components/UI/contact/ContactTitleCard";
 
 const useStyles = makeStyles((theme: Theme) => ({
   wrapper: {
@@ -21,10 +21,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-const Updates: React.FC = () => {
-  useEffect(() => {
-    document.title = "CoinMarketCap | Updates";
-  });
+const Contact: React.FC = () => {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -32,6 +29,7 @@ const Updates: React.FC = () => {
   const companies = useAppSelector(selectCompanies);
 
   useEffect(() => {
+    document.title = "CoinMarketCap | Contact";
     if (!companies.value && companies.status === "IDLE") {
       dispatch(fetchCompanies());
     }
@@ -47,7 +45,7 @@ const Updates: React.FC = () => {
       alignItems="stretch"
     >
       <Grid item xs={12} lg={8} xl={9}>
-        <StatusUpdateListCard />
+        <ContactTitleCard />
       </Grid>
       <Hidden mdDown>
         <Grid item lg={4} xl={3}>
@@ -73,4 +71,4 @@ const Updates: React.FC = () => {
   );
 };
 
-export default Updates;
+export default Contact;

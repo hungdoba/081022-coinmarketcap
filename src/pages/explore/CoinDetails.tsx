@@ -1,20 +1,22 @@
-import React from 'react';
-import { Theme, makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
-import { useParams } from 'react-router';
-import CoinDetailsCard from '../../components/UI/coins/organisms/CoinDetailsCard';
+import React, { useEffect } from "react";
+import { Theme, makeStyles } from "@material-ui/core/styles";
+import { Grid } from "@material-ui/core";
+import { useParams } from "react-router";
+import CoinDetailsCard from "../../components/UI/coins/organisms/CoinDetailsCard";
 
 const useStyles = makeStyles((theme: Theme) => ({
   wrapper: {
-    height: '100%',
-    '& > .MuiGrid-item': {
-      height: '100%',
-    }
-  }
+    height: "100%",
+    "& > .MuiGrid-item": {
+      height: "100%",
+    },
+  },
 }));
 
-
 const CoinDetails: React.FC = () => {
+  useEffect(() => {
+    document.title = "CoinMarketCap | Coin Details";
+  });
   const classes = useStyles();
   const { coinId }: { coinId: string } = useParams();
 
@@ -24,14 +26,14 @@ const CoinDetails: React.FC = () => {
       className={classes.wrapper}
       spacing={3}
       direction="row"
-      justify="center"
+      justifyContent="center"
       alignItems="stretch"
     >
       <Grid item xs={12}>
         <CoinDetailsCard coinId={coinId} />
       </Grid>
     </Grid>
-  )
-}
+  );
+};
 
-export default CoinDetails
+export default CoinDetails;

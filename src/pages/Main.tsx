@@ -2,10 +2,13 @@ import React from "react";
 import {
   AccountBalanceRounded,
   DataUsageRounded,
-  LibraryBooks,
-  // SelectAllRounded,
   TollRounded,
   TrendingUpRounded,
+  ContactSupportRounded,
+  AccountBoxRounded,
+  SecurityRounded,
+  // LibraryBooks,
+  // SelectAllRounded,
 } from "@material-ui/icons";
 import { BrowserRouter } from "react-router-dom";
 import PageLayout from "../components/templates/PageLayout";
@@ -14,7 +17,11 @@ import Exchanges from "./explore/Exchanges";
 import Trends from "./analytics/Trends";
 import Coins from "./explore/Coins";
 import CoinDetails from "./explore/CoinDetails";
-import Updates from "./explore/Updates";
+// import Updates from "./explore/Updates";
+import About from "./sites/About";
+import Privacy from "./sites/Privacy";
+import Contact from "./sites/Contact";
+
 // import DeFi from "./explore/DeFi";
 import { RootModule } from "../models";
 
@@ -60,13 +67,13 @@ const Main: React.FC = () => {
           page: <Exchanges />,
           index: 3,
         },
-        {
-          label: "Updates",
-          path: "/updates",
-          icon: <LibraryBooks />,
-          page: <Updates />,
-          index: 4,
-        },
+        // {
+        //   label: "Updates",
+        //   path: "/updates",
+        //   icon: <LibraryBooks />,
+        //   page: <Updates />,
+        //   index: 4,
+        // },
         // {
         //   label: 'DeFi',
         //   path: '/defi',
@@ -74,6 +81,32 @@ const Main: React.FC = () => {
         //   page: <DeFi />,
         //   index: 5
         // },
+      ],
+    },
+    {
+      moduleName: "Pages",
+      pages: [
+        {
+          label: "About Us",
+          path: "/about",
+          icon: <AccountBoxRounded />,
+          page: <About />,
+          index: 5,
+        },
+        {
+          label: "Privacy Policy",
+          path: "/privacy",
+          icon: <SecurityRounded />,
+          page: <Privacy />,
+          index: 6,
+        },
+        {
+          label: "Contact",
+          path: "/contact",
+          icon: <ContactSupportRounded />,
+          page: <Contact />,
+          index: 7,
+        },
       ],
     },
   ];

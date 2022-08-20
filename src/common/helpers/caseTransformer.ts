@@ -1,5 +1,5 @@
-import camelCase from 'lodash.camelcase';
-import snakeCase from 'lodash.snakecase';
+import camelCase from "lodash.camelcase";
+import snakeCase from "lodash.snakecase";
 
 interface ObjectValueType {
   [key: string]: unknown;
@@ -12,10 +12,9 @@ const caseTransformer = (transformKey: (key: string) => string) => {
       return value.map(transform);
     }
 
-    if (typeof value === 'object' && value) {
+    if (typeof value === "object" && value) {
       const result: { [key: string]: unknown } = {};
-
-      Object.keys(value).forEach(key => {
+      Object.keys(value).forEach((key) => {
         result[transformKey(key)] = transform((value as ObjectValueType)[key]);
       });
 
